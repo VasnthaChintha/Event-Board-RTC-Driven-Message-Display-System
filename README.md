@@ -328,4 +328,4 @@ This project provides practical experience in Embedded C programming, ARM7 archi
 
 This project was developed as an Embedded Systems application to demonstrate RTC-based automated message scheduling, secure administration, LCD interfacing, and temperature monitoring using the LPC2148 ARM7 microcontroller.
 
-# ⭐ Thank you for visiting this repository!
+### ⭐ Thank you for visiting this repository!
