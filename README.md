@@ -81,7 +81,8 @@ This project introduces an RTC-driven automated message display system using the
 
 The following block diagram illustrates the interaction between the LPC2148 microcontroller and its input/output peripherals.
 
-![EventBoard Block Diagram](Circuit_Diagram/EventBoard_Block_Diagram.png)
+<img width="1536" height="1024" alt="RTC-Driven Event Board System" src="https://github.com/user-attachments/assets/218dbf50-656e-4784-833d-79991cb817df" />
+
 
 ## 📸 Project Hardware
 
