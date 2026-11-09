@@ -1,6 +1,6 @@
-📢 EventBoard: RTC-Driven Message Display System using LPC2148
+## 📢 EventBoard: RTC-Driven Message Display System using LPC2148
 
-📖 Table of Contents
+## 📖 Table of Contents
 - Project Overview
 - Problem Statement
 - Proposed Solution
@@ -23,21 +23,21 @@
 - Learning Outcomes
 - Conclusion
 
-📖 Project Overview
+## 📖 Project Overview
 
 EventBoard is an Embedded Systems project developed to automate the display of predefined announcements at scheduled times using the LPC2148 ARM7 Microcontroller.
 The system uses the built-in Real-Time Clock (RTC) to maintain the current time and automatically display scheduled messages on a 16x2 LCD with a scrolling mechanism. The system supports 10 predefined messages stored in the microcontroller's memory. Users can enter a secure Admin Mode using a switch and password-protected keypad to edit the current time and select which messages should be active. When a scheduled message matches the RTC time, the corresponding message is displayed on the LCD, and a green LED indicates active schedule display mode. When no message is scheduled, the system displays the current time and room temperature measured using an LM35 temperature sensor through the LPC2148 ADC. A red LED indicates idle display mode. This project demonstrates practical implementation of Embedded C programming, ARM7 microcontroller interfacing, RTC-based scheduling, keypad interfacing, LCD interfacing, ADC operations, and password-based authentication.
 
-❗ Problem Statement
+## ❗ Problem Statement
 
 Traditional notice boards require manual updates whenever announcements, schedules, or important information change. 
 This process consumes time and requires continuous human intervention. Additionally, users may miss important announcements if they are not present near the notice board at the time of display. There is a need for an automated, real-time message display system that can display predefined announcements at specific times without requiring manual intervention.
 
-💡 Proposed Solution
+## 💡 Proposed Solution
 
 This project introduces an RTC-driven automated message display system using the LPC2148 microcontroller. The system stores predefined messages in controller memory and uses the RTC to compare the current time with scheduled message timings. When a scheduled time matches, the corresponding message is automatically displayed on the 16x2 LCD with scrolling functionality. A password-protected Admin Mode allows authorized users to edit the RTC time and enable or disable messages using a keypad. The system also integrates an LM35 temperature sensor to monitor room temperature and display it whenever no scheduled announcement is active.
 
-🎯 Objectives
+## 🎯 Objectives
 
 - Automate the display of predefined announcements.
 - Implement RTC-based scheduling using LPC2148.
@@ -49,7 +49,7 @@ This project introduces an RTC-driven automated message display system using the
 - Monitor room temperature using an LM35 sensor.
 - Indicate operating status using green and red LEDs.
 
-⭐ Features
+## ⭐ Features
 
 - RTC-Based Automatic Message Scheduling
 - 10 Predefined Messages
@@ -64,11 +64,11 @@ This project introduces an RTC-driven automated message display system using the
 - Red LED for Idle Display Mode
 - Modular Embedded C Programming
 
-🧩 Hardware Requirements
+## 🧩 Hardware Requirements
 
 <img width="631" height="566" alt="Screenshot 2026-11-09 171705" src="https://github.com/user-attachments/assets/2fc1691d-69ab-4079-b8ec-2144b7fd1a1b" />
 
-💻 Software Requirements
+## 💻 Software Requirements
 
 - Embedded C Programming
 - Keil uVision IDE
@@ -76,18 +76,18 @@ This project introduces an RTC-driven automated message display system using the
 - Flash Magic
 - LPC2148 Microcontroller Programming
 
-🖼️ Block Diagram
+## 🖼️ Block Diagram
 
 
 The following block diagram illustrates the interaction between the LPC2148 microcontroller and its input/output peripherals.
 
 ![EventBoard Block Diagram](Circuit_Diagram/EventBoard_Block_Diagram.png)
 
-📸 Project Hardware
+## 📸 Project Hardware
 
 <img width="4095" height="1676" alt="1000400154" src="https://github.com/user-attachments/assets/b65e2976-0687-40d5-bcbf-d0ccf3579000" />
 
-Main Controller
+**Main Controller**
 
 **LPC2148 ARM7 Microcontroller**
 
@@ -98,16 +98,16 @@ Input Components
 - RTC – Provides the current time.
 - LM35 – Measures room temperature.
   
-Output Components
+**Output Components**
 
 - 16x2 LCD – Displays scheduled messages, time and temperature.
 - Green LED – Indicates active scheduled message display.
 - Red LED – Indicates idle display mode.
 - Buzzer – Additional alert hardware.
 
-⚙️ Working Principle
+## ⚙️ Working Principle
 
-Step 1 – System Initialization
+**Step 1 – System Initialization**
 
 The LPC2148 initializes the required peripherals, including:
 - LCD
@@ -118,12 +118,12 @@ The LPC2148 initializes the required peripherals, including:
 - LEDs
 The controller loads the predefined messages from its memory.
 
-Step 2 – RTC Time Monitoring
+**Step 2 – RTC Time Monitoring**
 
 The RTC continuously maintains the current time.
 The controller reads the RTC hour and minute values and compares them with the predefined message schedules.
 
-Step 3 – Message Scheduling
+**Step 3 – Message Scheduling**
 
 The system contains 10 predefined messages.
 Each message contains:
@@ -133,14 +133,14 @@ Each message contains:
 - Enable/Disable status
 When the current RTC time matches an enabled message's scheduled time, the corresponding message is selected for display.
 
-Step 4 – LCD Message Display
+**Step 4 – LCD Message Display**
 
 When a scheduled message is identified:
 - The message is displayed on the 16x2 LCD.
 - The message scrolls to display the complete text.
 - The green LED is turned ON to indicate active schedule display mode.
 
-Step 5 – Idle Display Mode
+**Step 5 – Idle Display Mode**
 
 When no scheduled message is active:
 - The LCD displays the current RTC time.
@@ -148,12 +148,12 @@ When no scheduled message is active:
 - The LPC2148 ADC reads the sensor output.
 - The measured temperature is displayed on the LCD.
 - The red LED is turned ON to indicate idle mode.
-- 
-🔐 Admin Mode
+ 
+## 🔐 Admin Mode
 
 Admin Mode provides authorized access to modify system settings.
 
- Admin Mode Activation
+ **Admin Mode Activation**
  
 1. Activate the Admin Mode switch.
 2. The system requests a password.
@@ -161,7 +161,7 @@ Admin Mode provides authorized access to modify system settings.
 4. The controller verifies the entered password.
 5. After successful authentication, Admin Mode is enabled.
 
-Admin Mode Operations
+**Admin Mode Operations**
 
 - Edit current RTC time.
 - Select predefined messages.
@@ -170,7 +170,7 @@ Admin Mode Operations
 - Return to Normal Mode.
 Initially, all 10 predefined messages are enabled.
 
-⏰ RTC Time Editing
+## ⏰ RTC Time Editing
 
 The RTC time editing feature is designed to provide a fully user-interactive experience.
 
@@ -188,7 +188,7 @@ The administrator can modify the current time through the keypad.
 8. Return to the Admin Menu.
 The updated RTC time is used for subsequent message scheduling.
 
-📅 Message Scheduling
+## 📅 Message Scheduling
 
 The system supports 10 predefined messages stored in controller memory.
 
@@ -231,7 +231,7 @@ The LM35 temperature sensor is used to measure the surrounding room temperature.
 3. The controller converts the ADC reading into a temperature value.
 4. The measured temperature is displayed on the LCD during idle mode.
 
-# 🧩 Software Modules
+## 🧩 Software Modules
 
 The project can be organized into the following software modules:
 - Main Control Module
@@ -247,7 +247,7 @@ The project can be organized into the following software modules:
 - LED Control Module
 - Buzzer Control Module
 
-📊 Results
+## 📊 Results
 
 The intended system operation includes:
 - Automatic display of predefined messages based on RTC time.
@@ -259,7 +259,7 @@ The intended system operation includes:
 - LED-based indication of active and idle modes.
 The implementation demonstrates the integration of multiple LPC2148 peripherals in a real-time embedded application.
 
-🚀 Applications
+## 🚀 Applications
 
 - Educational Institutions
 - Classrooms and Laboratories
@@ -270,7 +270,7 @@ The implementation demonstrates the integration of multiple LPC2148 peripherals 
 - Railway and Bus Information Displays
 - Automated Notice Boards
 
-✅ Advantages
+## ✅ Advantages
 
 - Reduces manual announcement updates.
 - Automatically displays scheduled information.
@@ -281,7 +281,7 @@ The implementation demonstrates the integration of multiple LPC2148 peripherals 
 - Offers simple keypad-based operation.
 - Demonstrates practical embedded system integration.
 
-🔮 Future Enhancements
+## 🔮 Future Enhancements
 
 - Add EEPROM storage for messages and configuration.
 - Implement wireless message updates using Wi-Fi.
@@ -292,7 +292,7 @@ The implementation demonstrates the integration of multiple LPC2148 peripherals 
 - Implement remote monitoring through a mobile application.
 - Add multiple language support.
 
-📚 Learning Outcomes
+## 📚 Learning Outcomes
 
 - ARM7 LPC2148 Microcontroller Programming
 - Embedded C Programming
@@ -307,13 +307,13 @@ The implementation demonstrates the integration of multiple LPC2148 peripherals 
 - Peripheral Driver Development
 - Embedded System Design
 
-🏁 Conclusion
+## 🏁 Conclusion
 
 The EventBoard project demonstrates the development of an automated message display system using the LPC2148 ARM7 microcontroller.
 By integrating RTC-based scheduling, LCD scrolling, keypad-based administration, password authentication, and temperature monitoring, the system provides an effective solution for displaying scheduled announcements.
 This project provides practical experience in Embedded C programming, ARM7 architecture, peripheral interfacing, and real-time embedded system development.
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 
 - **Microcontroller:** LPC2148 (ARM7)
 - **Programming Language:** Embedded C
@@ -323,8 +323,8 @@ This project provides practical experience in Embedded C programming, ARM7 archi
 - **Development IDE:** Keil uVision
 - **Programming Tool:** Flash Magic
 
-🙏 Acknowledgement
+## 🙏 Acknowledgement
 
 This project was developed as an Embedded Systems application to demonstrate RTC-based automated message scheduling, secure administration, LCD interfacing, and temperature monitoring using the LPC2148 ARM7 microcontroller.
 
-⭐ Thank you for visiting this repository!
+# ⭐ Thank you for visiting this repository!
